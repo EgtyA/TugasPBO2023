@@ -467,42 +467,6 @@ public class UtsBuku extends javax.swing.JFrame {
 
     private void jButtonImporCSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonImporCSVActionPerformed
         // TODO add your handling code here:
-        JFileChooser filechooser = new JFileChooser();
-
-                int i = filechooser.showOpenDialog(null);
-                if (i == JFileChooser.APPROVE_OPTION) {
-                    
-                    EntityManager entityManager = Persistence.createEntityManagerFactory("TugasUtsPU").createEntityManager();
-                    entityManager.getTransaction().begin();
-
-                    
-                    File f = filechooser.getSelectedFile();
-                    String filepath = f.getPath();
-                    String fi = f.getName();
-                    //Parsing CSV Data
-                    System.out.print(filepath);
-                    DefaultTableModel csv_data = new DefaultTableModel();
-
-                    try {
-
-                        InputStreamReader inputStreamReader = new InputStreamReader(new FileInputStream(filepath));
-                        org.apache.commons.csv.CSVParser csvParser = CSVFormat.DEFAULT.parse(inputStreamReader);
-                        for (CSVRecord csvRecord : csvParser) {
-
-                        Buku_1 b = new Buku_1();
-                        b.setIsbn(csvRecord.get(0));
-                        b.setJudulBuku(csvRecord.get(1));
-                        b.setTahunTerbit(csvRecord.get(2));
-                        b.setPenerbit(csvRecord.get(3));
-                        entityManager.persist(b);
-                        
-                        }
-                        
-                    } catch (Exception ex) {
-                        System.out.println("Error in Parsing CSV File");
-                    }
-                    
-                    entityManager.getTransaction().commit();}
     }//GEN-LAST:event_jButtonImporCSVActionPerformed
 
     /**
