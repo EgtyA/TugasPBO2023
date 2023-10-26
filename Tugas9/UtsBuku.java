@@ -410,19 +410,6 @@ public class UtsBuku extends javax.swing.JFrame {
 
     private void jScrollPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane1MouseClicked
         // TODO add your handling code here:
-        int baris = jTableBuku.rowAtPoint(evt.getPoint());
-
-        String Isbn = jTableBuku.getValueAt(baris, 0).toString();
-        jTextFieldisbn.setText(Isbn);
-
-        String judul_buku = jTableBuku.getValueAt(baris, 1).toString();
-        jTextField2.setText(judul_buku);
-
-        String tahun_terbit = jTableBuku.getValueAt(baris, 2).toString();
-        jTextField3.setText(tahun_terbit);
-
-        String penerbit = jTableBuku.getValueAt(baris, 3).toString();
-        jTextField4.setText(penerbit);
     }//GEN-LAST:event_jScrollPane1MouseClicked
 
     private void jButtoncetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtoncetakActionPerformed
