@@ -408,10 +408,6 @@ public class UtsBuku extends javax.swing.JFrame {
         kosongkan_form();
     }//GEN-LAST:event_jButtonhapusActionPerformed
 
-    private void jScrollPane1MouseClicked(java.awt.event.MouseEvent evt) {//GEN-FIRST:event_jScrollPane1MouseClicked
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jScrollPane1MouseClicked
-
     private void jButtoncetakActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtoncetakActionPerformed
         // TODO add your handling code here:
         InputStream reportTemplate = Buku_1.class.getResourceAsStream("report1.jrxml");
@@ -451,10 +447,6 @@ public class UtsBuku extends javax.swing.JFrame {
         String penerbit = jTableBuku.getValueAt(baris, 3).toString();
         jTextField4.setText(penerbit);
     }//GEN-LAST:event_jTableBukuMouseClicked
-
-    private void jButtonImporCSVActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButtonImporCSVActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_jButtonImporCSVActionPerformed
 
     /**
      * @param args the command line arguments
