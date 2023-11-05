@@ -6,8 +6,7 @@
 -	Interface diimplementasikan menggunakan kata ‘implements’ sedangkan pada Class Abstract diimplementasikan dengan ‘extends’.
 
 2. Override adalah meng implementasikan method yang memiliki nama dan parameter yang sama antara subclass dan superclass namun menjalankan perintah dan fungsi yang berbeda.
-
-Overload adalah menggunakan jumlah/tipe parameter input yang berbeda pada method dengan nama sama dalam satu kelas.
+   Overload adalah menggunakan jumlah/tipe parameter input yang berbeda pada method dengan nama sama dalam satu kelas.
 
 3. Keyword public jika digunakan pada method mapaun atribut, maka metod/atribut tersebut dapat diakses diluar Class maupun didalam Class itu sendiri.
 Keyword protected hanya bisa diakses oleh Class itu sendiri, turunan dari Class tersebut, dan berada pada satu package. Jadi, jika package yang berbeda, method/atribut dengan protected tidak dapat diakses.
