@@ -59,31 +59,6 @@ public class UtsBuku extends javax.swing.JFrame {
 
     ArrayList<Buku> dataBuku;
 
-    private int masukkanData(Connection conn, String Isbn, String judul_buku, String tahun_terbit, String penerbit) throws SQLException {
-        PreparedStatement pst = conn.prepareStatement("INSERT INTO buku (isbn, judul_buku, tahun_terbit, penerbit) VALUES(?,?,?,?)");
-        pst.setString(1, Isbn);
-        pst.setString(2, judul_buku);
-        pst.setString(3, tahun_terbit);
-        pst.setString(4, penerbit);
-        return pst.executeUpdate();
-    }
-
-    private int updateData(Connection conn, String Isbn, String judul_buku, String tahun_terbit, String penerbit) throws SQLException {
-        PreparedStatement pst = conn.prepareStatement("UPDATE buku set judul_buku = ?, tahun_terbit = ?, penerbit = ? WHERE isbnGu = ?");
-
-        pst.setString(1, judul_buku);
-        pst.setString(2, tahun_terbit);
-        pst.setString(3, penerbit);
-        pst.setString(4, Isbn);
-        return pst.executeUpdate();
-    }
-
-    private int hapusData(Connection conn, String judul_buku) throws SQLException {
-        PreparedStatement pst = conn.prepareStatement("DELETE FROM buku WHERE judul_buku = ?");
-        pst.setString(1, judul_buku);
-        return pst.executeUpdate();
-    }
-
     private void tampil(Connection conn) {
         dataBuku.clear();
         try {
