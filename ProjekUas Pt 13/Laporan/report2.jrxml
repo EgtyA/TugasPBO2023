@@ -1,0 +1,159 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1eceb7a0-6d5c-45f6-a59e-873701365032">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<queryString language="SQL">
+		<![CDATA[select * from data_skripsi]]>
+	</queryString>
+	<field name="idSkripsi" class="java.lang.String"/>
+	<field name="judul" class="java.lang.String"/>
+	<field name="subJudul" class="java.lang.String"/>
+	<field name="penulis" class="java.lang.String"/>
+	<field name="tahun" class="java.lang.String"/>
+	<field name="jumlahHalaman" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="63" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="28" y="0" width="736" height="61" backcolor="#8DD18D" uuid="6c90f46f-0b69-447d-b4bc-fd9fb256349d"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="28" y="10" width="736" height="37" forecolor="#000000" uuid="8783db95-4b73-46bd-9b33-151d9034c3b2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Rounded MT Bold" size="30" isBold="false"/>
+				</textElement>
+				<text><![CDATA[Laporan Data Skripsi Perpustakaan BoSi]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="39" splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band height="24" splitType="Stretch">
+			<rectangle>
+				<reportElement x="694" y="2" width="108" height="20" uuid="b635e5e7-ffdc-4909-921c-fc3609af98ae"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="594" y="2" width="100" height="20" uuid="e7504abf-2851-4d9b-ab43-32464337bdb5"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="443" y="2" width="151" height="20" uuid="3c7333d7-47df-413a-be3f-c2d910bef66c"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="298" y="2" width="145" height="20" uuid="9b0273dd-c920-4f08-b671-33c6e2e77371"/>
+			</rectangle>
+			<rectangle>
+				<reportElement x="0" y="2" width="100" height="20" uuid="e034ae3d-cd78-4646-8a7d-dd2e264cc658"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="594" y="2" width="100" height="20" uuid="b1d0dacf-2bb6-452b-9b8b-13d1e81e404c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="13"/>
+				</textElement>
+				<text><![CDATA[tahun]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="694" y="2" width="108" height="20" uuid="dad6e7ae-d63b-4abe-adb7-b409c0e2568a"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="13"/>
+				</textElement>
+				<text><![CDATA[jumlah_halaman]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="0" y="0" width="100" height="20" uuid="344ca63f-a483-45f2-8760-fc3948bc68c3"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="13"/>
+				</textElement>
+				<text><![CDATA[id_skripsi]]></text>
+			</staticText>
+			<rectangle>
+				<reportElement x="100" y="2" width="198" height="20" uuid="01f5882a-4290-4cf9-a4eb-090d18990bfa"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="100" y="2" width="198" height="18" uuid="1070830b-a677-4d26-bb6f-cc2b8eb29716"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="13"/>
+				</textElement>
+				<text><![CDATA[judul]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="298" y="0" width="145" height="24" uuid="4a5b4460-995c-4776-aadf-fffd06fd2653"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="13"/>
+				</textElement>
+				<text><![CDATA[sub_judul]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="443" y="0" width="151" height="24" uuid="cb7a730c-5d30-4370-8a15-e534b50041be"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Calisto MT" size="14"/>
+				</textElement>
+				<text><![CDATA[penulis]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="25" splitType="Stretch">
+			<textField>
+				<reportElement x="0" y="0" width="100" height="20" uuid="70181183-38b5-45ee-8cbe-ef6b020711a7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idSkripsi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="100" y="0" width="198" height="20" uuid="218e8a1c-9251-4a9f-a116-3601832e5527"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{judul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="298" y="0" width="145" height="20" uuid="1a997c6b-d0e2-4747-895c-d13770d28fde"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{subJudul}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="443" y="0" width="151" height="20" uuid="3917f58d-7da8-491a-841d-11684dccd661"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12" isStrikeThrough="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{penulis}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="694" y="0" width="108" height="20" uuid="b6edb8e0-d4d4-4312-87f2-5b7a19854e3f"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{jumlahHalaman}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="594" y="0" width="100" height="20" uuid="f0da7c58-b7db-4757-96dc-dd8f3c6bdb8c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{tahun}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<textField>
+				<reportElement x="694" y="0" width="100" height="20" uuid="1e3f37b4-447d-40c4-bb72-64ec4f740c3a"/>
+				<textFieldExpression><![CDATA[$V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
