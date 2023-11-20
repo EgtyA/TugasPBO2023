@@ -1,5 +1,10 @@
 # Progres UAS minggu ke 13
-untuk progres uas PBO minggu ini sampai dengan report(cetak) berdasarkan hasil pencarian
+untuk progres uas PBO minggu ini sampai dengan Ireport(cetak) berdasarkan hasil pencarian
+
+# Source code 
+Untuk Source code button cetak laporan data buku bisa dilihat pada bagian jButtoncetakActionPerformed
+Untuk Source code cetak laporan data skripsi dapat dilihat pada bagian jButtoncetak2ActionPerformed
+source code terletak pada folder uas_pbo, di Class Gui_Laporan
 
 # Desain laporan data buku dan data skripsi 
 ![Screenshot 2023-11-19 224045](https://github.com/EgtyA/TugasPBO2023/assets/149040227/4eee6bb5-ff59-46b6-a93b-4ad6523dfb46)
