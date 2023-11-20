@@ -3,7 +3,8 @@ untuk progres uas PBO minggu ini sampai dengan Ireport(cetak) berdasarkan hasil 
 
 # Source code 
 Untuk Source code button cetak laporan data buku bisa dilihat pada bagian jButtoncetakActionPerformed
-Untuk Source code cetak laporan data skripsi dapat dilihat pada bagian jButtoncetak2ActionPerformed
+
+Untuk Source code cetak laporan data skripsi dapat dilihat pada bagian jButtoncetak2ActionPerformed.
 source code terletak pada folder uas_pbo, di Class Gui_Laporan
 
 # Desain laporan data buku dan data skripsi 
