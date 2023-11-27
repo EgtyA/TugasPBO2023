@@ -6,6 +6,7 @@ package uas_pbo;
 
 import ClassPersistane.DataBuku;
 import ClassPersistane.PeminjamanBuku;
+import ClassPersistane.PeminjamanSkripsi;
 import java.text.ParseException;
 import java.text.SimpleDateFormat;
 import java.util.Date;
@@ -16,6 +17,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.swing.JOptionPane;
 import javax.swing.JTable;
 import javax.swing.table.DefaultTableModel;
@@ -36,10 +40,18 @@ public class Gui_Peminjaman_Buku extends javax.swing.JFrame {
     }
        
     private void tampil() {
-        EntityManager entityManager = Persistence.createEntityManagerFactory("Uas_PBOPU").createEntityManager();
-        entityManager.getTransaction().begin();
-        TypedQuery<PeminjamanBuku> querySelectAll = entityManager.createNamedQuery("PeminjamanBuku.findAll", PeminjamanBuku.class);
-        List<PeminjamanBuku> results = querySelectAll.getResultList();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Uas_PBOPU");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<PeminjamanBuku> cq = cb.createQuery(PeminjamanBuku.class);
+        
+        Root<PeminjamanBuku>pin = cq.from(PeminjamanBuku.class);
+        cq.orderBy(cb.asc(pin.get("noPeminjaman")));
+        CriteriaQuery<PeminjamanBuku> select = cq.select(pin);
+        TypedQuery<PeminjamanBuku> q = em.createQuery(select);
+        List<PeminjamanBuku> results = q.getResultList();
 
         DefaultTableModel model = (DefaultTableModel) jTable2.getModel();
         model.setRowCount(0);
@@ -59,16 +71,25 @@ public class Gui_Peminjaman_Buku extends javax.swing.JFrame {
            
             model.addRow(baris);
         }
-        entityManager.getTransaction().commit();
-        entityManager.close();
+        em.getTransaction().commit();
+        emf.close();
     }
     
 
     private void tampilbuku() {
-        EntityManager entityManager = Persistence.createEntityManagerFactory("Uas_PBOPU").createEntityManager();
-        entityManager.getTransaction().begin();
-        TypedQuery<DataBuku> querySelectAll = entityManager.createNamedQuery("DataBuku.findAll", DataBuku.class);
-        List<DataBuku> results = querySelectAll.getResultList();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Uas_PBOPU");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<DataBuku> cq = cb.createQuery(DataBuku.class);
+        
+        Root<DataBuku>d = cq.from(DataBuku.class);
+        cq.orderBy(cb.asc(d.get("idBuku")));
+        CriteriaQuery<DataBuku> select = cq.select(d);
+        TypedQuery<DataBuku> q = em.createQuery(select);
+        
+        List<DataBuku> results = q.getResultList();
 
         DefaultTableModel model = (DefaultTableModel) jTablebook.getModel();
         model.setRowCount(0);
@@ -85,8 +106,8 @@ public class Gui_Peminjaman_Buku extends javax.swing.JFrame {
            
             model.addRow(baris);
         }
-        entityManager.getTransaction().commit();
-        entityManager.close();
+        em.getTransaction().commit();
+        emf.close();
     }
     
     private void kosongkan_form() {
@@ -99,20 +120,6 @@ public class Gui_Peminjaman_Buku extends javax.swing.JFrame {
         jTextField8.setText("");
         jTextField9.setText("");
         jTextField10.setText("");
-    }
-    
-    public static Date getTanggalFromTable(JTable table, int kolom){
-        JTable tabel = table;
-        String str_tgl = String.valueOf(tabel.getValueAt(tabel.getSelectedRow(), kolom));
-        Date tanggal = null;
-        try{
-           tanggal = new SimpleDateFormat("yyyy-MM-dd").parse(str_tgl);
-           
-        }catch (ParseException ex){
-            
-         System.out.println("Error : " + ex.getMessage());    
-    }
-        return tanggal;
     }
     
     /**
@@ -392,7 +399,7 @@ public class Gui_Peminjaman_Buku extends javax.swing.JFrame {
         });
         jPanel1.add(jTextFieldcari, new org.netbeans.lib.awtextra.AbsoluteConstraints(640, 260, 210, 30));
 
-        jComboBoxcari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "no_peminjaman", "judul", "status_pinjam", "tanggal_pinjam", "tanggal_kembali", "nama", "nim", "no_tlp", "angkatan" }));
+        jComboBoxcari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "no_peminjaman", "judul", "status_pinjam", "nama", "nim", "no_tlp", "angkatan" }));
         jPanel1.add(jComboBoxcari, new org.netbeans.lib.awtextra.AbsoluteConstraints(860, 260, 130, 30));
 
         jLabel13.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
@@ -626,7 +633,7 @@ public class Gui_Peminjaman_Buku extends javax.swing.JFrame {
             if (queryString.endsWith(" WHERE ")) {
                 throw new IllegalArgumentException("No search criteria selected.");
             }
-
+            queryString += "ORDER BY d.idBuku ASC";
             TypedQuery<DataBuku> query = em.createQuery(queryString, DataBuku.class);
             query.setParameter("searchTerm", "%" + searchTerm + "%");
 
@@ -841,7 +848,7 @@ public class Gui_Peminjaman_Buku extends javax.swing.JFrame {
             if (queryString.endsWith(" WHERE ")) {
                 throw new IllegalArgumentException("No search criteria selected.");
             }
-
+            queryString += "ORDER BY p.noPeminjaman ASC";
             TypedQuery<PeminjamanBuku> query = em.createQuery(queryString, PeminjamanBuku.class);
             query.setParameter("searchTerm", "%" + searchTerm + "%");
 

@@ -5,6 +5,7 @@
 package uas_pbo;
 
 import ClassPersistane.DataBuku;
+import ClassPersistane.DataSkripsi;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.SQLException;
@@ -16,6 +17,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 
@@ -32,11 +36,19 @@ public class Gui_Buku_1 extends javax.swing.JFrame {
     ArrayList<DataBuku> dataBuku;
 
     private void tampil() {
-        dataBuku.clear();
-        EntityManager entityManager = Persistence.createEntityManagerFactory("Uas_PBOPU").createEntityManager();
-        entityManager.getTransaction().begin();
-        TypedQuery<DataBuku> querySelectAll = entityManager.createNamedQuery("DataBuku.findAll", DataBuku.class);
-        List<DataBuku> results = querySelectAll.getResultList();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Uas_PBOPU");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<DataBuku> cq = cb.createQuery(DataBuku.class);
+        
+        Root<DataBuku>d = cq.from(DataBuku.class);
+        cq.orderBy(cb.asc(d.get("idBuku")));
+        CriteriaQuery<DataBuku> select = cq.select(d);
+        TypedQuery<DataBuku> q = em.createQuery(select);
+        
+        List<DataBuku> results = q.getResultList();
 
         DefaultTableModel model = (DefaultTableModel) jTable1.getModel();
         model.setRowCount(0);
@@ -53,8 +65,8 @@ public class Gui_Buku_1 extends javax.swing.JFrame {
 
             model.addRow(baris);
         }
-        entityManager.getTransaction().commit();
-        entityManager.close();
+        em.getTransaction().commit();
+        emf.close();
     }
 
     private void kosongkan_form() {
@@ -301,7 +313,7 @@ public class Gui_Buku_1 extends javax.swing.JFrame {
         jLabel10.setText("Cari");
         jPanel1.add(jLabel10, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 350, -1, 23));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arsitektur", "Bahasa", "Ilmu sosial", "Karya umum", "Literatur", "Statistik", "Teknologi", "Teknik", " " }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Arsitektur", "Bahasa", "Biografi", "Business", "Ensiklopedia", "Motivasi", "Statistik", "Teknologi", "Teknik" }));
         jPanel1.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(130, 240, 190, -1));
 
         getContentPane().add(jPanel1, new org.netbeans.lib.awtextra.AbsoluteConstraints(0, 0, 960, 730));
@@ -545,7 +557,7 @@ public class Gui_Buku_1 extends javax.swing.JFrame {
             if (queryString.endsWith(" WHERE ")) {
                 throw new IllegalArgumentException("No search criteria selected.");
             }
-
+            queryString += "ORDER BY d.idBuku ASC";
             TypedQuery<DataBuku> query = em.createQuery(queryString, DataBuku.class);
             query.setParameter("searchTerm", "%" + searchTerm + "%");
 

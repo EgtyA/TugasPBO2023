@@ -236,8 +236,8 @@
                   <Table columnCount="6" rowCount="4">
                     <Column editable="true" title="Id_skripsi" type="java.lang.Object"/>
                     <Column editable="true" title="Judul" type="java.lang.Object"/>
-                    <Column editable="true" title="Subjudul" type="java.lang.Object"/>
-                    <Column editable="true" title="Pengarang" type="java.lang.Object"/>
+                    <Column editable="true" title="Kata Kunci" type="java.lang.Object"/>
+                    <Column editable="true" title="Penulis" type="java.lang.Object"/>
                     <Column editable="true" title="Tahun" type="java.lang.Object"/>
                     <Column editable="true" title="Jumlah halaman" type="java.lang.Object"/>
                   </Table>
@@ -376,7 +376,7 @@
             <Property name="font" type="java.awt.Font" editor="org.netbeans.beaninfo.editors.FontEditor">
               <Font name="Arial Rounded MT Bold" size="12" style="0"/>
             </Property>
-            <Property name="text" type="java.lang.String" value="Subjudul"/>
+            <Property name="text" type="java.lang.String" value="Kata Kunci"/>
           </Properties>
         </Component>
         <Component class="javax.swing.JButton" name="jButton1simpan">
@@ -423,11 +423,12 @@
               <Font name="Yu Gothic UI Semibold" size="12" style="0"/>
             </Property>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="4">
+              <StringArray count="5">
                 <StringItem index="0" value="id_skripsi"/>
                 <StringItem index="1" value="judul"/>
-                <StringItem index="2" value="penulis"/>
-                <StringItem index="3" value="tahun"/>
+                <StringItem index="2" value="kata kunci"/>
+                <StringItem index="3" value="penulis"/>
+                <StringItem index="4" value="tahun"/>
               </StringArray>
             </Property>
           </Properties>

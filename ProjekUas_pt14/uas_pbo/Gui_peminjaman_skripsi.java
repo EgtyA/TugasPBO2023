@@ -17,6 +17,9 @@ import javax.persistence.EntityManager;
 import javax.persistence.EntityManagerFactory;
 import javax.persistence.Persistence;
 import javax.persistence.TypedQuery;
+import javax.persistence.criteria.CriteriaBuilder;
+import javax.persistence.criteria.CriteriaQuery;
+import javax.persistence.criteria.Root;
 import javax.swing.JOptionPane;
 import javax.swing.table.DefaultTableModel;
 import static uas_pbo.Gui_Peminjaman_Buku.date;
@@ -37,10 +40,19 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
     }
      
      private void tampilskripsi() {
-        EntityManager entityManager = Persistence.createEntityManagerFactory("Uas_PBOPU").createEntityManager();
-        entityManager.getTransaction().begin();
-        TypedQuery<PeminjamanSkripsi> querySelectAll = entityManager.createNamedQuery("PeminjamanSkripsi.findAll", PeminjamanSkripsi.class);
-        List<PeminjamanSkripsi> results = querySelectAll.getResultList();
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Uas_PBOPU");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<PeminjamanSkripsi> cq = cb.createQuery(PeminjamanSkripsi.class);
+        
+        Root<PeminjamanSkripsi>pin = cq.from(PeminjamanSkripsi.class);
+        cq.orderBy(cb.asc(pin.get("noPeminjamanSkripsi")));
+        CriteriaQuery<PeminjamanSkripsi> select = cq.select(pin);
+        TypedQuery<PeminjamanSkripsi> q = em.createQuery(select);
+//        TypedQuery<PeminjamanSkripsi> querySelectAll = entityManager.createNamedQuery("PeminjamanSkripsi.findAll", PeminjamanSkripsi.class);
+        List<PeminjamanSkripsi> results = q.getResultList();
 
         DefaultTableModel model = (DefaultTableModel) jTable2pinjam.getModel();
         model.setRowCount(0);
@@ -58,15 +70,24 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
             baris[9] = data.getAngkatan();
             model.addRow(baris);
         }
-        entityManager.getTransaction().commit();
-        entityManager.close();
+        em.getTransaction().commit();
+        emf.close();
     }
      
-     private void tampil() {
-        EntityManager entityManager = Persistence.createEntityManagerFactory("Uas_PBOPU").createEntityManager();
-        entityManager.getTransaction().begin();
-        TypedQuery<DataSkripsi> querySelectAll = entityManager.createNamedQuery("DataSkripsi.findAll", DataSkripsi.class);
-        List<DataSkripsi> results = querySelectAll.getResultList();
+    private void tampil() {
+        EntityManagerFactory emf = Persistence.createEntityManagerFactory("Uas_PBOPU");
+        EntityManager em = emf.createEntityManager();
+        em.getTransaction().begin();
+        
+        CriteriaBuilder cb = em.getCriteriaBuilder();
+        CriteriaQuery<DataSkripsi> cq = cb.createQuery(DataSkripsi.class);
+        
+        Root<DataSkripsi>d = cq.from(DataSkripsi.class);
+        cq.orderBy(cb.asc(d.get("idSkripsi")));
+        CriteriaQuery<DataSkripsi> select = cq.select(d);
+        TypedQuery<DataSkripsi> q = em.createQuery(select);
+        
+        List<DataSkripsi> results = q.getResultList();
 
         DefaultTableModel model = (DefaultTableModel) jTableskripsi.getModel();
         model.setRowCount(0);
@@ -74,15 +95,15 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
             Object[] baris = new Object[8];
             baris[0] = data.getIdSkripsi();
             baris[1] = data.getJudul();
-            baris[2] = data.getSubJudul();
+            baris[2] = data.getKataKunci();
             baris[3] = data.getPenulis();
             baris[4] = data.getTahun();
             baris[5] = data.getJumlahHalaman();
            
             model.addRow(baris);
         }
-        entityManager.getTransaction().commit();
-        entityManager.close();
+        em.getTransaction().commit();
+        emf.close();
     }
      
      private void kosongkan_form() {
@@ -90,6 +111,8 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
         jTextField1.setText("");
         jTextField2.setText("");
         jComboBox1.getSelectedItem();
+        jDateChooser3.setDate(null);
+        jDateChooser1.setDate(null);
         jTextField6.setText("");
         jTextField7.setText("");
         jTextField8.setText("");
@@ -169,7 +192,7 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Id_skripsi", "Judul", "Subjudul", "Penulis", "Tahun", "Jumlah halaman"
+                "Id_skripsi", "Judul", "Kata kunci", "Penulis", "Tahun", "Jumlah halaman"
             }
         ));
         jTableskripsi.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -185,7 +208,7 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
             }
         });
 
-        jComboBox2data.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "id_skripsi", "judul", "subjudul", "penulis", "tahun", " ", " " }));
+        jComboBox2data.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "id_skripsi", "judul", "kata kunci", "penulis", "tahun", " " }));
         jComboBox2data.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
                 jComboBox2dataActionPerformed(evt);
@@ -387,7 +410,7 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
         });
         jPanel2.add(jTextFieldcari, new org.netbeans.lib.awtextra.AbsoluteConstraints(600, 260, 210, 30));
 
-        jComboBoxcari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "no_peminjaman", "judul", "status_pinjam", "tanggal_pinjam", "tanggal_kembali", "nama", "nim", "prodi", "no_tlp", "angkatan" }));
+        jComboBoxcari.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "no_peminjaman", "judul", "status_pinjam", "nama", "nim", "prodi", "no_tlp", "angkatan" }));
         jPanel2.add(jComboBoxcari, new org.netbeans.lib.awtextra.AbsoluteConstraints(820, 260, 130, 30));
 
         jLabel13.setFont(new java.awt.Font("Yu Gothic UI", 0, 14)); // NOI18N
@@ -576,8 +599,11 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
         // TODO add your handling code here:
         try {
             String selection = (String) jComboBox2data.getSelectedItem();
-
             String searchTerm = jTextField3data.getText().trim();
+            
+             // Create and execute the JPA query
+            EntityManagerFactory emf = Persistence.createEntityManagerFactory("Uas_PBOPU");
+            EntityManager em = emf.createEntityManager();
 
             // Building the JPA query dynamically based on the selected criteria
             String queryString = "SELECT d FROM DataSkripsi d WHERE ";
@@ -589,8 +615,8 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
                 case "judul":
                 queryString += "LOWER (d.judul) LIKE LOWER (:searchTerm)";
                 break;
-                case "subjudul":
-                queryString += "LOWER (d.subJudul) LIKE LOWER (:searchTerm)";
+                case "kata kunci":
+                queryString += "LOWER (d.kataKunci) LIKE LOWER (:searchTerm)";
                 break;
                 case "penulis":
                 queryString += "LOWER (d.penulis) LIKE LOWER (:searchTerm)";
@@ -602,15 +628,7 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
                 throw new IllegalArgumentException("No search criteria selected.");
             }
 
-            // Create and execute the JPA query
-            EntityManagerFactory emf = Persistence.createEntityManagerFactory("Uas_PBOPU");
-            EntityManager em = emf.createEntityManager();
-
-            // Check if WHERE clause is not empty
-            if (queryString.endsWith(" WHERE ")) {
-                throw new IllegalArgumentException("No search criteria selected.");
-            }
-
+            queryString += "ORDER BY p.noPeminjamanSkripsi ASC";
             TypedQuery<DataSkripsi> query = em.createQuery(queryString, DataSkripsi.class);
             query.setParameter("searchTerm", "%" + searchTerm + "%");
 
@@ -621,7 +639,7 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
             // Add columns to the model
             dataModel.addColumn("Id_skripsi");
             dataModel.addColumn("Judul");
-            dataModel.addColumn("Subjudul");
+            dataModel.addColumn("Kata kunci");
             dataModel.addColumn("penulis");
             dataModel.addColumn("Tahun");
             dataModel.addColumn("jumlah halaman");
@@ -632,7 +650,7 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
                 Object[] rowData = {
                     result.getIdSkripsi(),
                     result.getJudul(),
-                    result.getSubJudul(),
+                    result.getKataKunci(),
                     result.getPenulis(),
                     result.getTahun(),
                     result.getJumlahHalaman(),};
@@ -678,12 +696,6 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
                 case "status_pinjam":
                 queryString += "LOWER(p.statusPeminjaman) LIKE LOWER (:searchTerm)";
                 break;
-                case "tanggal_pinjam":
-                queryString += "p.tglPeminjamanSkripsi LIKE :searchTerm";
-                break;
-                case "tanggal_kembali":
-                queryString += "p.tglKembaliSkripsi LIKE LOWER :searchTerm";
-                break;
                 case "nama":
                 queryString += "LOWER(p.namaPeminjam) LIKE LOWER (:searchTerm)";
                 break;
@@ -702,18 +714,13 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
                 default:
                 throw new IllegalArgumentException("No search criteria selected.");
             }
-
-            // Check if WHERE clause is not empty
-            if (queryString.endsWith(" WHERE ")) {
-                throw new IllegalArgumentException("No search criteria selected.");
-            }
-
+            queryString += "ORDER BY p.noPeminjamanSkripsi ASC";
             TypedQuery<PeminjamanSkripsi> query = em.createQuery(queryString, PeminjamanSkripsi.class);
             query.setParameter("searchTerm", "%" + searchTerm + "%");
 
             List<PeminjamanSkripsi> results = query.getResultList();
 
-            DefaultTableModel dataModel = new DefaultTableModel();
+            DefaultTableModel dataModel = new DefaultTableModel();           
             // Add columns to the model
             dataModel.addColumn("no peminjaman");
             dataModel.addColumn("judul");
@@ -739,10 +746,9 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
                 baris[7] = data.getProgramStudi();
                 baris[8] = data.getNoTlp();
                 baris[9] = data.getAngkatan();
-
+                
                 dataModel.addRow(baris);
             }
-
             // Set jTable1 with the created model
             jTable2pinjam.setModel(dataModel);
             System.out.println(results);
@@ -851,15 +857,21 @@ public class Gui_peminjaman_skripsi extends javax.swing.JFrame {
         DefaultTableModel model = (DefaultTableModel) jTable2pinjam.getModel();
         model.setRowCount(0);
         tampilskripsi();
+        kosongkan_form();
 
-        if (!no_peminjaman.isEmpty()) {
-            if (!no_peminjaman.isEmpty()) {
-                this.peringatan("Hapus data Berhasil");
+        try {
+            if (b != null) {
+                JOptionPane.showMessageDialog(this, "Hapus data Berhasil", "Sukses", JOptionPane.INFORMATION_MESSAGE);
             } else {
-                this.peringatan("Hapus data Gagal");
+                JOptionPane.showMessageDialog(this, "Data tidak ditemukan", "Gagal", JOptionPane.ERROR_MESSAGE);
             }
-        } else {
-            this.peringatan("Wajib input id buku");
+        } catch (Exception ex) {
+            em.getTransaction().rollback();
+            Logger.getLogger(Gui_Buku_1.class.getName()).log(Level.SEVERE, null, ex);
+            JOptionPane.showMessageDialog(this, "Terjadi kesalahan: " + ex.getMessage(), "Error", JOptionPane.ERROR_MESSAGE);
+        } finally {
+            em.close();
+            emf.close();
         }
     }//GEN-LAST:event_jButtonhapus1ActionPerformed
 

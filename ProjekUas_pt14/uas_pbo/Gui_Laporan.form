@@ -275,7 +275,7 @@
                       <Table columnCount="6" rowCount="4">
                         <Column editable="true" title="Id_skripsi" type="java.lang.Object"/>
                         <Column editable="true" title="Judul" type="java.lang.Object"/>
-                        <Column editable="true" title="Subjudul" type="java.lang.Object"/>
+                        <Column editable="true" title="Kata kunci" type="java.lang.Object"/>
                         <Column editable="true" title="Penulis" type="java.lang.Object"/>
                         <Column editable="true" title="Tahun" type="java.lang.Object"/>
                         <Column editable="true" title="Jumlah halaman" type="java.lang.Object"/>
@@ -367,7 +367,7 @@
                   <StringArray count="5">
                     <StringItem index="0" value="id_skripsi"/>
                     <StringItem index="1" value="judul"/>
-                    <StringItem index="2" value="subjudul"/>
+                    <StringItem index="2" value="kata kunci"/>
                     <StringItem index="3" value="penulis"/>
                     <StringItem index="4" value="tahun"/>
                   </StringArray>

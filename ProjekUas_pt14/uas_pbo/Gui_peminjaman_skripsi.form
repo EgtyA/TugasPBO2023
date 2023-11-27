@@ -52,11 +52,45 @@
                   <Table columnCount="6" rowCount="4">
                     <Column editable="true" title="Id_skripsi" type="java.lang.Object"/>
                     <Column editable="true" title="Judul" type="java.lang.Object"/>
-                    <Column editable="true" title="Subjudul" type="java.lang.Object"/>
+                    <Column editable="true" title="Kata kunci" type="java.lang.Object"/>
                     <Column editable="true" title="Penulis" type="java.lang.Object"/>
                     <Column editable="true" title="Tahun" type="java.lang.Object"/>
                     <Column editable="true" title="Jumlah halaman" type="java.lang.Object"/>
                   </Table>
+                </Property>
+                <Property name="columnModel" type="javax.swing.table.TableColumnModel" editor="org.netbeans.modules.form.editors2.TableColumnModelEditor">
+                  <TableColumnModel selectionModel="0">
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                    <Column maxWidth="-1" minWidth="-1" prefWidth="-1" resizable="true">
+                      <Title/>
+                      <Editor/>
+                      <Renderer/>
+                    </Column>
+                  </TableColumnModel>
                 </Property>
                 <Property name="tableHeader" type="javax.swing.table.JTableHeader" editor="org.netbeans.modules.form.editors2.JTableHeaderEditor">
                   <TableHeader reorderingAllowed="true" resizingAllowed="true"/>
@@ -76,14 +110,13 @@
         <Component class="javax.swing.JComboBox" name="jComboBox2data">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="7">
+              <StringArray count="6">
                 <StringItem index="0" value="id_skripsi"/>
                 <StringItem index="1" value="judul"/>
-                <StringItem index="2" value="subjudul"/>
+                <StringItem index="2" value="kata kunci"/>
                 <StringItem index="3" value="penulis"/>
                 <StringItem index="4" value="tahun"/>
                 <StringItem index="5" value=" "/>
-                <StringItem index="6" value=" "/>
               </StringArray>
             </Property>
           </Properties>
@@ -566,17 +599,15 @@
         <Component class="javax.swing.JComboBox" name="jComboBoxcari">
           <Properties>
             <Property name="model" type="javax.swing.ComboBoxModel" editor="org.netbeans.modules.form.editors2.ComboBoxModelEditor">
-              <StringArray count="10">
+              <StringArray count="8">
                 <StringItem index="0" value="no_peminjaman"/>
                 <StringItem index="1" value="judul"/>
                 <StringItem index="2" value="status_pinjam"/>
-                <StringItem index="3" value="tanggal_pinjam"/>
-                <StringItem index="4" value="tanggal_kembali"/>
-                <StringItem index="5" value="nama"/>
-                <StringItem index="6" value="nim"/>
-                <StringItem index="7" value="prodi"/>
-                <StringItem index="8" value="no_tlp"/>
-                <StringItem index="9" value="angkatan"/>
+                <StringItem index="3" value="nama"/>
+                <StringItem index="4" value="nim"/>
+                <StringItem index="5" value="prodi"/>
+                <StringItem index="6" value="no_tlp"/>
+                <StringItem index="7" value="angkatan"/>
               </StringArray>
             </Property>
           </Properties>

@@ -92,7 +92,7 @@ public class Gui_Laporan extends javax.swing.JFrame {
             Object[] baris = new Object[8];
             baris[0] = data.getIdSkripsi();
             baris[1] = data.getJudul();
-            baris[2] = data.getSubJudul();
+            baris[2] = data.getKataKunci();
             baris[3] = data.getPenulis();
             baris[4] = data.getTahun();
             baris[5] = data.getJumlahHalaman();
@@ -243,7 +243,7 @@ public class Gui_Laporan extends javax.swing.JFrame {
                 {null, null, null, null, null, null}
             },
             new String [] {
-                "Id_skripsi", "Judul", "Subjudul", "Penulis", "Tahun", "Jumlah halaman"
+                "Id_skripsi", "Judul", "Kata kunci", "Penulis", "Tahun", "Jumlah halaman"
             }
         ));
         jTableskripsi.addMouseListener(new java.awt.event.MouseAdapter() {
@@ -278,7 +278,7 @@ public class Gui_Laporan extends javax.swing.JFrame {
         });
         jPanel2.add(jTextFieldskripsi, new org.netbeans.lib.awtextra.AbsoluteConstraints(610, 30, 250, 30));
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "id_skripsi", "judul", "subjudul", "penulis", "tahun" }));
+        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "id_skripsi", "judul", "kata kunci", "penulis", "tahun" }));
         jPanel2.add(jComboBox2, new org.netbeans.lib.awtextra.AbsoluteConstraints(880, 30, 117, 30));
 
         jButtonhapusSkripsi.setText("Hapus");
@@ -527,7 +527,7 @@ public class Gui_Laporan extends javax.swing.JFrame {
                     queryString += "LOWER (d.judul) LIKE LOWER (:searchTerm)";
                     break;
                 case "subjudul":
-                    queryString += "LOWER (d.subJudul) LIKE LOWER (:searchTerm)";
+                    queryString += "LOWER (d.kataKunci) LIKE LOWER (:searchTerm)";
                     break;
                 case "penulis":
                     queryString += "LOWER (d.penulis) LIKE LOWER (:searchTerm)";
@@ -569,7 +569,7 @@ public class Gui_Laporan extends javax.swing.JFrame {
                 Object[] rowData = {
                     result.getIdSkripsi(),
                     result.getJudul(),
-                    result.getSubJudul(),
+                    result.getKataKunci(),
                     result.getPenulis(),
                     result.getTahun(),
                     result.getJumlahHalaman(),};
@@ -635,7 +635,8 @@ public class Gui_Laporan extends javax.swing.JFrame {
             if (queryString.endsWith(" WHERE ")) {
                 throw new IllegalArgumentException("No search criteria selected.");
             }
-
+            
+            queryString += "ORDER BY d.idBuku ASC";
             TypedQuery<DataBuku> query = em.createQuery(queryString, DataBuku.class);
             query.setParameter("searchTerm", "%" + searchTerm + "%");
 
@@ -693,8 +694,8 @@ public class Gui_Laporan extends javax.swing.JFrame {
                 case "judul":
                     queryString += "LOWER (d.judul) LIKE LOWER (:searchTerm)";
                     break;
-                case "subjudul":
-                    queryString += "LOWER (d.subJudul) LIKE LOWER (:searchTerm)";
+                case "kata kunci":
+                    queryString += "LOWER (d.kataKunci) LIKE LOWER (:searchTerm)";
                     break;
                 case "penulis":
                     queryString += "LOWER (d.penulis) LIKE LOWER (:searchTerm)";
@@ -714,7 +715,7 @@ public class Gui_Laporan extends javax.swing.JFrame {
             if (queryString.endsWith(" WHERE ")) {
                 throw new IllegalArgumentException("No search criteria selected.");
             }
-
+            queryString += "ORDER BY d.idSkripsi ASC";
             TypedQuery<DataSkripsi> query = em.createQuery(queryString, DataSkripsi.class);
             query.setParameter("searchTerm", "%" + searchTerm + "%");
 
@@ -725,7 +726,7 @@ public class Gui_Laporan extends javax.swing.JFrame {
             // Add columns to the model
             dataModel.addColumn("Id_skripsi");
             dataModel.addColumn("Judul");
-            dataModel.addColumn("Subjudul");
+            dataModel.addColumn("Kata kunci");
             dataModel.addColumn("penulis");
             dataModel.addColumn("Tahun");
             dataModel.addColumn("jumlah halaman");
@@ -736,7 +737,7 @@ public class Gui_Laporan extends javax.swing.JFrame {
                 Object[] rowData = {
                     result.getIdSkripsi(),
                     result.getJudul(),
-                    result.getSubJudul(),
+                    result.getKataKunci(),
                     result.getPenulis(),
                     result.getTahun(),
                     result.getJumlahHalaman(),};
@@ -841,7 +842,7 @@ public class Gui_Laporan extends javax.swing.JFrame {
                     DataSkripsi s = new DataSkripsi();
                     s.setIdSkripsi(csvRecord.get(0));
                     s.setJudul(csvRecord.get(1));
-                    s.setSubJudul(csvRecord.get(2));
+                    s.setKataKunci(csvRecord.get(2));
                     s.setPenulis(csvRecord.get(3));
                     s.setTahun(csvRecord.get(4));
                     s.setJumlahHalaman(csvRecord.get(5));
