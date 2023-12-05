@@ -13,11 +13,11 @@ CREATE TABLE IF NOT EXISTS public.anggota
 CREATE TABLE IF NOT EXISTS public.data_buku
 (
     id_buku character varying(15) COLLATE pg_catalog."default" NOT NULL,
-    isbn character varying(35) COLLATE pg_catalog."default",
-    judul_buku character varying(70) COLLATE pg_catalog."default",
+    isbn character varying(50) COLLATE pg_catalog."default",
+    judul_buku character varying(255) COLLATE pg_catalog."default",
     kategori character varying(35) COLLATE pg_catalog."default",
-    pengarang character varying(50) COLLATE pg_catalog."default",
-    penerbit character varying(25) COLLATE pg_catalog."default",
+    pengarang character varying(89) COLLATE pg_catalog."default",
+    penerbit character varying(50) COLLATE pg_catalog."default",
     tahun_terbit character varying(8) COLLATE pg_catalog."default",
     jumlah_halaman character varying(30) COLLATE pg_catalog."default",
     CONSTRAINT daftar_buku_pkey PRIMARY KEY (id_buku)
@@ -25,8 +25,8 @@ CREATE TABLE IF NOT EXISTS public.data_buku
 
 CREATE TABLE IF NOT EXISTS public.data_skripsi
 (
-    id_skripsi character varying(6) COLLATE pg_catalog."default" NOT NULL,
-    judul character varying(50) COLLATE pg_catalog."default",
+    id_skripsi character varying(15) COLLATE pg_catalog."default" NOT NULL,
+    judul character varying(255) COLLATE pg_catalog."default",
     kata_kunci character varying(40) COLLATE pg_catalog."default",
     penulis character varying(40) COLLATE pg_catalog."default",
     tahun character varying(4) COLLATE pg_catalog."default",
@@ -36,23 +36,23 @@ CREATE TABLE IF NOT EXISTS public.data_skripsi
 
 CREATE TABLE IF NOT EXISTS public.peminjaman_buku
 (
-    no_peminjaman character varying(10) COLLATE pg_catalog."default" NOT NULL,
+    no_peminjaman character varying(15) COLLATE pg_catalog."default" NOT NULL,
     status_peminjaman character varying(14) COLLATE pg_catalog."default",
     tgl_peminjaman_buku date,
     tgl_kembali_buku date,
-    nama_peminjam character varying(30) COLLATE pg_catalog."default",
+    nama_peminjam character varying(100) COLLATE pg_catalog."default",
     nim character varying(15) COLLATE pg_catalog."default",
     program_studi character varying(25) COLLATE pg_catalog."default",
     angkatan character varying(8) COLLATE pg_catalog."default",
-    id_buku character varying(10) COLLATE pg_catalog."default",
-    judul_buku character varying(50) COLLATE pg_catalog."default",
+    id_buku character varying(15) COLLATE pg_catalog."default",
+    judul_buku character varying(255) COLLATE pg_catalog."default",
     CONSTRAINT detail_peminjaman_buku_pkey PRIMARY KEY (no_peminjaman)
 );
 
 CREATE TABLE IF NOT EXISTS public.peminjaman_skripsi
 (
-    no_peminjaman_skripsi character varying(10) COLLATE pg_catalog."default" NOT NULL,
-    judul_skripsi character varying(50) COLLATE pg_catalog."default",
+    no_peminjaman_skripsi character varying(15) COLLATE pg_catalog."default" NOT NULL,
+    judul_skripsi character varying(300) COLLATE pg_catalog."default",
     status_peminjaman character varying(14) COLLATE pg_catalog."default",
     tgl_peminjaman_skripsi date,
     tgl_kembali_skripsi date,
@@ -60,7 +60,7 @@ CREATE TABLE IF NOT EXISTS public.peminjaman_skripsi
     nim character varying(15) COLLATE pg_catalog."default",
     program_studi character varying(25) COLLATE pg_catalog."default",
     angkatan character varying(10) COLLATE pg_catalog."default",
-    id_skripsi character varying(10) COLLATE pg_catalog."default",
+    id_skripsi character varying(15) COLLATE pg_catalog."default",
     CONSTRAINT detail_peminjaman_skripsi_pkey PRIMARY KEY (no_peminjaman_skripsi)
 );
 
