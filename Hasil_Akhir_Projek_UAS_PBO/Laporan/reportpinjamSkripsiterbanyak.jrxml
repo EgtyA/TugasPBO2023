@@ -1,0 +1,227 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="53da5e3b-c0c5-4eca-b709-949124f7f071">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="mostFrequentId" class="java.lang.String"/>
+	<parameter name="maxCount" class="java.lang.Integer"/>
+	<queryString language="SQL">
+		<![CDATA[select* from peminjaman_skripsi]]>
+	</queryString>
+	<field name="noPeminjamanSkripsi" class="java.lang.String"/>
+	<field name="judulSkripsi" class="java.lang.String"/>
+	<field name="statusPeminjaman" class="java.lang.String"/>
+	<field name="tglPeminjamanSkripsi" class="java.util.Date"/>
+	<field name="tglKembaliSkripsi" class="java.util.Date"/>
+	<field name="namaPeminjam" class="java.lang.String"/>
+	<field name="programStudi" class="java.lang.String"/>
+	<field name="angkatan" class="java.lang.String"/>
+	<field name="idSkripsi.idSkripsi" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="11" width="802" height="68" backcolor="#7EC07E" uuid="3e49fb6b-dfe7-44aa-bafe-7fb2ca1081a9"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="1" y="21" width="801" height="47" uuid="1082bda7-71dd-4be1-9d3d-f5f1f6950d7c"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Rounded MT Bold" size="32"/>
+				</textElement>
+				<text><![CDATA[Laporan Peminjaman Skripsi Terbanyak]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="76" splitType="Stretch">
+			<textField>
+				<reportElement x="14" y="17" width="434" height="20" uuid="09b231f8-e63d-48b0-8142-5102f29bde3e"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Skripsi yang paling banyak dipinjam adalah skripsi dengan ID :  " +$P{mostFrequentId}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="14" y="41" width="434" height="20" uuid="344686a0-2c1f-4b2d-94aa-712d5753d89b"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Jumlah terbanyak dipinjam :  " +$P{maxCount}]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="0" y="8" width="75" height="48" uuid="7bee7d39-3ce2-4831-81a4-c1d3b70e135f"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[No peminjaman
+skripsi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="466" y="8" width="100" height="35" uuid="cd033755-36da-4625-8fa7-412f0d7b8683"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Tgl kembali
+skripsi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="716" y="8" width="86" height="20" uuid="20115f49-f875-44bd-afc6-567e34538b0d"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Angkatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="154" y="8" width="112" height="35" uuid="27aabea3-06ab-4f0d-93c7-5cfaf3d55641"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Judul skripsi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="366" y="8" width="100" height="35" uuid="c83c4455-55bd-4c93-9dda-6a867ed22772"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Tgl peminjaman 
+skripsi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="75" y="8" width="79" height="35" uuid="79920039-034e-481f-84c8-92d75f4ba059"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Id skripsi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="266" y="8" width="100" height="35" uuid="d7a03679-7ecf-4f94-a2df-400d8bc37a2e"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Status peminjaman]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="566" y="8" width="81" height="35" uuid="2d3162de-a46f-43e0-9688-33a658c294f8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Nama 
+peminjam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="647" y="8" width="69" height="35" uuid="46d2a2d1-df57-4b6a-8b7c-210732cd3db8"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<text><![CDATA[Program studi]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="43" splitType="Stretch">
+			<textField>
+				<reportElement x="154" y="0" width="112" height="32" uuid="de663aa6-3888-4b2e-9660-6fe924253ffb"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{judulSkripsi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="466" y="0" width="100" height="20" uuid="fa9ccc2f-5907-4e14-a2c4-fc4d12bd267c"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd-MM-yyyy", new java.util.Locale("id")).format($F{tglKembaliSkripsi})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="566" y="0" width="81" height="32" uuid="ec720064-c593-4e60-a3ee-90bb392d8c67"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{namaPeminjam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="0" y="0" width="73" height="32" uuid="7ea58447-af2e-45d0-b31c-6635e420f959"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noPeminjamanSkripsi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="715" y="0" width="87" height="20" uuid="1d1b7b9d-a341-4cf6-9ebe-0c52c4489044"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{angkatan}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="647" y="0" width="69" height="32" uuid="f2ba0e09-f022-4b10-bc1b-09b610862cb3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{programStudi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="366" y="0" width="100" height="20" uuid="ba5fcd3d-92b1-4d29-b379-c3870b16a828"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd-MM-yyyy", new java.util.Locale("id")).format($F{tglPeminjamanSkripsi})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="75" y="0" width="79" height="32" uuid="0b93062d-9faa-401c-bbbd-df2437786351"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idSkripsi.idSkripsi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="266" y="0" width="100" height="32" uuid="98435585-da5d-4866-a324-9e7fa0a801f3"/>
+				<textElement textAlignment="Center">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{statusPeminjaman}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<rectangle>
+				<reportElement x="2" y="10" width="800" height="27" backcolor="#D8EED8" uuid="51b01a2e-8fa6-4121-b17d-2cf7c13d2108"/>
+			</rectangle>
+			<textField>
+				<reportElement x="745" y="10" width="41" height="27" uuid="85a7728e-1f0c-4355-8aa7-9eb3eedcc04d"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField pattern="dd-MMM-yy">
+				<reportElement x="18" y="10" width="124" height="27" uuid="7f1cfcbd-3601-48e5-8418-9c1417b126b4"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="679" y="10" width="66" height="27" uuid="3c3d82b2-ac38-4f33-9369-b954d8d6c510"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>

@@ -1,0 +1,243 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="null" pageWidth="842" pageHeight="595" orientation="Landscape" columnWidth="802" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="928086ae-9009-40ec-bf53-dd6509985408">
+	<property name="ireport.zoom" value="1.0"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<parameter name="startDate" class="java.util.Date">
+		<defaultValueExpression><![CDATA[new SimpleDateFormat("dd-MM-yyyy", new java.util.Locale("id")).format($P{startDate})]]></defaultValueExpression>
+	</parameter>
+	<parameter name="enddate" class="java.util.Date">
+		<defaultValueExpression><![CDATA[new SimpleDateFormat("dd-MM-yyyy", new java.util.Locale("id")).format($P{enddate})]]></defaultValueExpression>
+	</parameter>
+	<queryString language="SQL">
+		<![CDATA[select * from peminjaman_buku]]>
+	</queryString>
+	<field name="noPeminjaman" class="java.lang.String"/>
+	<field name="statusPeminjaman" class="java.lang.String"/>
+	<field name="tglPeminjamanBuku" class="java.util.Date"/>
+	<field name="tglKembaliBuku" class="java.util.Date"/>
+	<field name="namaPeminjam" class="java.lang.String"/>
+	<field name="nim" class="java.lang.String"/>
+	<field name="programStudi" class="java.lang.String"/>
+	<field name="angkatan" class="java.lang.String"/>
+	<field name="idBuku.idBuku" class="java.lang.String"/>
+	<field name="judulBuku" class="java.lang.String"/>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="79" splitType="Stretch">
+			<rectangle radius="10">
+				<reportElement x="0" y="6" width="802" height="68" backcolor="#7EC07E" uuid="faed52df-f151-4921-9942-7ed6f40816ac"/>
+			</rectangle>
+			<staticText>
+				<reportElement x="1" y="19" width="801" height="47" uuid="cf866bba-8d9c-49a1-96f9-1b7966e74acb"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Arial Rounded MT Bold" size="32"/>
+				</textElement>
+				<text><![CDATA[Laporan Peminjaman Buku Per Bulan]]></text>
+			</staticText>
+		</band>
+	</title>
+	<pageHeader>
+		<band height="60" splitType="Stretch">
+			<textField>
+				<reportElement x="1" y="18" width="800" height="42" uuid="f3672e3e-8a77-40a7-818b-53c318ef9fa0"/>
+				<textElement>
+					<font fontName="Times New Roman" size="14"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Laporan peminjaman buku per bulan dari tanggal  " + new SimpleDateFormat("dd-MM-yyyy", new java.util.Locale("id")).format($P{startDate}) + "  sampai dengan  " + new SimpleDateFormat("dd-MM-yyyy", new java.util.Locale("id")).format($P{enddate})]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageHeader>
+	<columnHeader>
+		<band height="61" splitType="Stretch">
+			<staticText>
+				<reportElement x="127" y="10" width="115" height="20" uuid="d3059c03-b57c-4b52-a30e-fc01de34ec26"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[Judul Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="611" y="10" width="59" height="20" uuid="bcafefb9-101c-4aa1-bc35-78cccf05c456"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[Nim]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="329" y="10" width="100" height="31" uuid="930cfed3-b762-4e68-a565-6431b291ed70"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[Tgl 
+Peminjaman
+]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="748" y="10" width="57" height="20" uuid="425b589b-3b4d-4a1a-8cc2-85a14d1e8986"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[angkatan]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="529" y="10" width="82" height="31" uuid="3dd5f99b-f402-4870-bf25-9745c4b808f2"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[Nama 
+Peminjam]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="242" y="10" width="87" height="31" uuid="265cd677-6ccc-451c-8753-886358664490"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[Status 
+Peminjaman]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="3" y="10" width="63" height="31" uuid="fd55fb69-79b2-4cfc-9ca0-a93e7aad9361"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[No
+Peminjaman]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="66" y="10" width="61" height="31" uuid="d82b06bc-b99b-46a9-91da-8ffb0d178ab8"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[Id Buku]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="670" y="10" width="78" height="31" uuid="b6cee3c2-4ee9-4543-b677-5154395833df"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[Program
+Studi]]></text>
+			</staticText>
+			<staticText>
+				<reportElement x="429" y="10" width="100" height="31" uuid="45788a1b-b75e-4820-8cd5-3d09f0911975"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<text><![CDATA[Tgl 
+Kembali 
+]]></text>
+			</staticText>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="67" splitType="Stretch">
+			<textField>
+				<reportElement x="242" y="10" width="87" height="39" uuid="a0f0cb52-6a44-4f36-bd6e-a6f8333a76f1"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{statusPeminjaman}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="127" y="10" width="115" height="20" uuid="abaf002d-5fe8-45f2-8a5d-e83988c34219"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{judulBuku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="3" y="10" width="63" height="39" uuid="f08ac5c3-f13f-4142-a184-cd8b77456d12"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{noPeminjaman}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="525" y="10" width="86" height="39" uuid="aeee4219-2f6d-4ebd-a8a9-970497a0d7a0"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{namaPeminjam}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="429" y="10" width="96" height="39" uuid="c87a1010-b17f-4422-bc7d-9de4fa593229"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd-MM-yyyy", new java.util.Locale("id")).format($F{tglKembaliBuku})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="611" y="10" width="59" height="20" uuid="9b10ab28-4744-43a0-b421-64d8a3887b0e"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nim}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="670" y="10" width="78" height="39" uuid="374a0477-821e-4cad-8dcd-3dd6cb732b9d"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{programStudi}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="329" y="10" width="100" height="39" uuid="c66e961c-02b2-436d-9777-db22f625ca1e"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new SimpleDateFormat("dd-MM-yyyy", new java.util.Locale("id")).format($F{tglPeminjamanBuku})]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="66" y="10" width="61" height="20" uuid="319381d3-c9ae-4ce5-ae20-89a3472c9f01"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{idBuku.idBuku}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="748" y="10" width="57" height="39" uuid="82637407-b2dc-4816-87e7-8a5271cf7cbc"/>
+				<textElement textAlignment="Center" verticalAlignment="Top">
+					<font fontName="Times New Roman" size="11"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{angkatan}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band height="45" splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band height="54" splitType="Stretch">
+			<rectangle>
+				<reportElement x="5" y="10" width="800" height="27" backcolor="#D8EED8" uuid="11e8a0dd-81e6-44b3-ac0f-a0d2a61aba0b"/>
+			</rectangle>
+			<textField pattern="dd-MMM-yy">
+				<reportElement x="21" y="10" width="124" height="27" uuid="3d3177c7-b7d7-4e3c-a6b5-32d2cf4fca31"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="748" y="10" width="41" height="27" uuid="8d1e532d-1175-4b4d-bbf0-a139dd00e563"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA[" " + $V{PAGE_NUMBER}]]></textFieldExpression>
+			</textField>
+			<textField>
+				<reportElement x="682" y="10" width="66" height="27" uuid="44a087ac-323e-476b-b324-0e8bf2cf83d6"/>
+				<textElement verticalAlignment="Middle">
+					<font fontName="Times New Roman" size="12"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Page "+$V{PAGE_NUMBER}+" of"]]></textFieldExpression>
+			</textField>
+		</band>
+	</pageFooter>
+	<summary>
+		<band height="42" splitType="Stretch"/>
+	</summary>
+</jasperReport>
