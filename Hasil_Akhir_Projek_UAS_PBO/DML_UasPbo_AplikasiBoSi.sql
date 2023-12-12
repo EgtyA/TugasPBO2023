@@ -903,7 +903,7 @@ INSERT INTO public.peminjaman_buku(
 	VALUES('PB0008',	'Dipinjam',	'2023-06-20',	'2023-06-29',	'Ranju', '07865434', 'Bisnis', '2022', 'B0011', 'Dasar-Dasar Audit Laporan Keuangan');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0009', 'Dikembalikan', '2023-06-20', '2023-06-29', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0009', 'Dikembalikan', '2023-06-20', '2023-06-29', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0076', 'Manajemen Sumber Daya Manusia');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0010', 'Dikembalikan', '2023-06-20', '2023-06-29', 'Alice Smith','078129', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
@@ -913,7 +913,7 @@ INSERT INTO public.peminjaman_buku(
 	VALUES ('PB0011', 'Dipinjam', '2023-06-20', '2023-06-29', 'Emma Garcia', '0726176', 'Sistem Informasi', '2020', 'B0094', 'Pengantar Metodologi Penelitian');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0012', 'Dikembalikan', '2023-06-20', '2023-06-29', 'Fika Putri','026373', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0012', 'Dikembalikan', '2023-06-20', '2023-06-29', 'Fika Putri','026373', 'Sistem Informasi', '2019', 'B0020', 'Career Development Strategies');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0013', 'Dipinjam', '2023-06-20', '2023-06-29', 'Akuag', '09023672', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
@@ -922,7 +922,7 @@ INSERT INTO public.peminjaman_buku(
 	VALUES ('PB0014', 'Dipinjam', '2023-06-20', '2023-06-29', 'Sophia Wagner','09236723', 'Sistem Informasi', '2019', 'B0076', 'Manajemen Sumber Daya Manusia');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0015', 'Dipinjam', '2023-06-20', '2023-06-29', 'Akuag', '0723633', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0015', 'Dipinjam', '2023-06-20', '2023-06-29', 'Akuag', '0723633', 'Sistem Informasi', '2020', 'B0020', 'Career Development Strategies');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0016', 'Dikembalikan', '2023-07-01', '2023-11-09', 'Nour Adel', '021689', 'Sistem Informasi', '2019', 'B0050', 'Cara jitu mendatangkan trafik website');
@@ -934,20 +934,20 @@ INSERT INTO public.peminjaman_buku(
 	VALUES ('PB0018', 'Dikembalikan', '2023-07-01', '2023-11-09', 'Alice Smith','0127638', 'Sistem Informasi', '2019', 'B0017', 'Pedoman Ejaan Bahasa Indonesia yg Disempurnakan ');	
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0019', 'Dipinjam', '2023-07-01', '2023-11-09', 'Akuag', '012633', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0019', 'Dipinjam', '2023-07-01', '2023-11-09', 'Akuag', '012633', 'Sistem Informasi', '2020', 'B0022', 'Ethics in Artificial Intelligence');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0020', 'Dipinjam', '2023-07-01', '2023-11-09', 'Wulan Sari','098267', 'Sistem Informasi', '2019', 'B0083', 'E-commerce Strategies');
 
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0021', 'Dipinjam', '2023-07-10', '2023-11-03', 'Akuag', '0903265', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0021', 'Dipinjam', '2023-07-10', '2023-11-03', 'Akuag', '0903265', 'Sistem Informasi', '2020', 'B0014', 'Perencanaan Strategis Arsitektur Teknologi Informasi');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0022', 'Dikembalikan', '2023-07-10', '2023-07-20', 'Matthy','09023623', 'Sistem Informasi', '2019', 'B0081', 'Information Systems Management');
  INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0023', 'Dipinjam', '2023-07-10', '2023-07-20', 'Kyle Sarni', '09018263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0023', 'Dipinjam', '2023-07-10', '2023-07-20', 'Kyle Sarni', '09018263', 'Sistem Informasi', '2020', 'B0057', 'Soekarno : Biografi Singkat 1901 – 1970 dari Taufik Adi Susilo');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0024', 'Dipinjam', '2023-07-10', '2023-07-20', 'Noah Richter','0902332', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
@@ -965,26 +965,26 @@ INSERT INTO public.peminjaman_buku(
 	VALUES ('PB0028', 'Dipinjam', '2023-07-21', '2023-07-30', 'Alice Smith','078129', 'Sistem Informasi', '2022', 'B0074', 'Pengantar Manajemen Pemasaran');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0029', 'Dipinjam', '2023-07-21', '2023-07-30', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0029', 'Dipinjam', '2023-07-21', '2023-07-30', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0008', 'Otewe Berbenah');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0030', 'Dipinjam', '2023-07-21', '2023-07-30', 'Alice Smith','078129', 'Sistem Informasi', '2019',  'B0070', 'Easy English Grammar');
 
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0031', 'Dipinjam', '2023-07-25', '2023-08-03', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0031', 'Dipinjam', '2023-07-25', '2023-08-03', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0037', 'Dari Puncak Khilafah Sejarah Arab-Islam Sejak Era Kejayaan Khilafah Utsmaniyah');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0032', 'Dipinjam', '2023-07-25', '2023-08-03', 'Müller', '0702653', 'Sistem Informasi', '2019', 'B0017', 'Pedoman Ejaan Bahasa Indonesia yg Disempurnakan');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0033', 'Dipinjam', '2023-07-25', '2023-08-03', 'Sophia Wagner', '090618263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0033', 'Dipinjam', '2023-07-25', '2023-08-03', 'Sophia Wagner', '090618263', 'Sistem Informasi', '2020', 'B0095', 'Sistem Kendali Cerdas');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0034', 'Dipinjam', '2023-07-25', '2023-08-03', 'Alice Smith','078129', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0034', 'Dipinjam', '2023-07-25', '2023-08-03', 'Alice Smith','078129', 'Sistem Informasi', '2019', 'B0035', 'Ensiklopedia Adaptasi Di Alam Raya');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0035', 'Dipinjam', '2023-07-25', '2023-08-03', 'Sariphy Ozmagot', '0718263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0035', 'Dipinjam', '2023-07-25', '2023-08-03', 'Sariphy Ozmagot', '0718263', 'Sistem Informasi', '2020', 'B0099', 'Komputer Cerdas Untuk Teknik Informatika');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0036', 'Dipinjam', '2023-07-25', '2023-08-03', 'Alice Smith','078129', 'Sistem Informasi', '2019', 'B0030', 'Multiprocesor');
@@ -993,33 +993,33 @@ INSERT INTO public.peminjaman_buku(
 	VALUES ('PB0037', 'Dipinjam', '2023-07-25', '2023-08-03', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0038', 'Dipinjam', '2023-07-25', '2023-08-03', 'Nour Adel','09058129', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0038', 'Dipinjam', '2023-07-25', '2023-08-03', 'Nour Adel','09058129', 'Sistem Informasi', '2019', 'B0020', 'Career Development Strategies');
     
 	
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0039', 'Dipinjam', '2023-07-26', '2023-08-09', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0039', 'Dipinjam', '2023-07-26', '2023-08-09', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0001', 'Rancang Bangun');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0040', 'Dipinjam', '2023-07-26', '2023-08-09', 'Alice Smith','078129', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0041', 'Dipinjam', '2023-07-26', '2023-08-09', 'Wulan Sari','078129', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0041', 'Dipinjam', '2023-07-26', '2023-08-09', 'Wulan Sari','078129', 'Sistem Informasi', '2020', 'B0082', 'The Alchemist');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0042', 'Dipinjam', '2023-07-26', '2023-08-09', 'Zhou Wáng','090658129', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0042', 'Dipinjam', '2023-07-26', '2023-08-09', 'Zhou Wáng','090658129', 'Sistem Informasi', '2019', 'B0089', 'Data Mining in Practice');
  INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0043', 'Dipinjam', '2023-07-26', '2023-08-09', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0044', 'Dipinjam', '2023-08-08', '2023-08-14', 'Nour Adel','09078129', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0044', 'Dipinjam', '2023-08-08', '2023-08-14', 'Nour Adel','09078129', 'Sistem Informasi', '2019', 'B0026', 'Kamus Besar Bahasa Prancis');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0045', 'Dipinjam', '2023-08-08', '2023-08-14', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0054', 'Strategi Pengembangan Karir Profesional');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0046', 'Dipinjam', '2023-08-08', '2023-08-14', 'Alice Smith','078129', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0046', 'Dipinjam', '2023-08-08', '2023-08-14', 'Alice Smith','078129', 'Sistem Informasi', '2019', 'B0029', 'Adminstrasi jaringan komputer');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0047', 'Dipinjam', '2023-08-08', '2023-08-14', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
@@ -1033,7 +1033,7 @@ INSERT INTO public.peminjaman_buku(
 	VALUES ('PB0049', 'Dipinjam', '2023-08-21', '2023-08-28', 'Leila Gamal', '0807618263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0050', 'Dipinjam', '2023-08-21', '2023-08-28', 'Zainab Ezzat','090658129', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0050', 'Dipinjam', '2023-08-21', '2023-08-28', 'Zainab Ezzat','090658129', 'Sistem Informasi', '2019', 'B0080', 'Cybersecurity Essentials');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0051', 'Dipinjam', '2023-08-21', '2023-08-28', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
@@ -1042,13 +1042,13 @@ INSERT INTO public.peminjaman_buku(
 	VALUES ('PB0052', 'Dipinjam', '2023-08-21', '2023-08-28', 'Alice Smith','078129', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0053', 'Dipinjam', '2023-08-21', '2023-08-28', 'Lǐ Huī', '0907618263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0053', 'Dipinjam', '2023-08-21', '2023-08-28', 'Lǐ Huī', '0907618263', 'Sistem Informasi', '2020', 'B0081', 'Information Systems Management');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0054', 'Dipinjam', '2023-08-21', '2023-08-28', 'Alice Smith','078129', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0055', 'Dipinjam', '2023-08-21', '2023-08-28', 'WuBo', '090218263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0055', 'Dipinjam', '2023-08-21', '2023-08-28', 'WuBo', '090218263', 'Sistem Informasi', '2020', 'B0062', 'Visualisasi Data dalam Bisnis Modern');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0056', 'Dipinjam', '2023-09-04', '2023-09-11', 'Alice Smith','070348129', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
@@ -1065,7 +1065,7 @@ INSERT INTO public.peminjaman_buku(
 	VALUES ('PB0059', 'Dipinjam', '2023-09-04', '2023-09-11', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0060', 'Dipinjam', '2023-09-04', '2023-09-11', 'Emma Davis','0905453', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0060', 'Dikembalikan', '2023-09-04', '2023-09-11', 'Emma Davis','0905453', 'Sistem Informasi', '2019', 'B0074', 'Pengantar Manajemen Pemasaran');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0061', 'Dipinjam', '2023-09-11', '2023-09-18', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
@@ -1083,7 +1083,7 @@ INSERT INTO public.peminjaman_buku(
 	VALUES ('PB0065', 'Dikembalikan', '2023-09-11', '2023-09-18', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0044', 'Machine Learning Algorithms');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0066', 'Dipinjam', '2023-09-11', '2023-09-18', 'Lukas Fischer','078129', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0066', 'Dipinjam', '2023-09-11', '2023-09-18', 'Lukas Fischer','078129', 'Sistem Informasi', '2019', 'B0083', 'E-commerce Strategies');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0067', 'Dipinjam', '2023-09-18', '2023-09-25', 'Akuag', '0718263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
@@ -1118,7 +1118,7 @@ INSERT INTO public.peminjaman_buku(
 	VALUES ('PB0076', 'Dikembalikan', '2023-09-26', '2023-10-03', 'Alice Smith','078129', 'Sistem Informasi', '2019', 'B0044', 'Machine Learning Algorithms');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0077', 'Dipinjam', '2023-09-26', '2023-10-03', 'Akuag', '0718263', 'Sistem Informasi', '2022', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0077', 'Dipinjam', '2023-09-26', '2023-10-03', 'Shubaru', '07731822', 'Sistem Informasi', '2022', 'B0034', 'Teknologi Informatika dan Komunikasi Perangkat Lunak');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0078', 'Dikembalikan', '2023-09-27', '2023-10-04', 'Alice Smith','078129', 'Sistem Informasi', '2019', 'B0062', 'Visualisasi Data dalam Bisnis Modern');
@@ -1129,7 +1129,7 @@ INSERT INTO public.peminjaman_buku(
 	VALUES ('PB0079', 'Dipinjam', '2023-10-05', '2023-10-13', 'Lucas Wilson', '071088263', 'Sistem Informasi', '2020', 'B0042', 'The Power of HabitGus Dur Kh Abdurrahman Wahid: Biografi Singkat 1940 – 2020');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0080', 'Dipinjam', '2023-10-05', '2023-10-13', 'Alice Smith','078708129', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0080', 'Dipinjam', '2023-10-05', '2023-10-13', 'Natsume','078708129', 'Sistem Informasi', '2019', 'B0028', 'Proceeding book of business and economic series: economics, management, and accounting conference');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0081', 'Dikembalikan', '2023-10-05', '2023-10-13', 'Akana Werha', '0707882063', 'Sistem Informasi', '2020', 'B0037', 'Dari Puncak Khilafah Sejarah Arab-Islam Sejak Era Kejayaan Khilafah Utsmaniyah');
@@ -1164,7 +1164,7 @@ INSERT INTO public.peminjaman_buku(
 	VALUES ('PB0090', 'Dipinjam', '2023-10-16', '2023-10-23', 'Wulan Sari','07068129', 'Sistem Informasi', '2019', 'B0090', 'Pengantar Statistika Penelitian');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0091', 'Dipinjam', '2023-10-16', '2023-10-23', 'Rendra Pratama', '09078263', 'Sistem Informasi', '2020', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0091', 'Dipinjam', '2023-10-16', '2023-10-23', 'Rendra Pratama', '09078263', 'Sistem Informasi', '2020', 'B0061', 'Pemrograman Python untuk Ilmuwan Data');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0092', 'Dipinjam', '2023-10-19', '2023-10-26', 'Alice Cya','07088129', 'Sistem Informasi', '2022', 'B0072', 'Kamus Lengkap Komputer dan TI');
@@ -1176,7 +1176,7 @@ INSERT INTO public.peminjaman_buku(
 	VALUES ('PB0094', 'Dipinjam', '2023-10-19', '2023-10-26', 'Evan Brown','01072737', 'Sistem Informasi', '2022', 'B0047', 'Inspirasi & Motivasi B.J. Habibie');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
-	VALUES ('PB0095', 'Dipinjam', '2023-10-19', '2023-10-26', 'Olivia Taylor', '01065362', 'Sistem Informasi', '2021', 'B0090', 'Pengantar Statistika Penelitian');
+	VALUES ('PB0095', 'Dikembalikan', '2023-10-19', '2023-10-26', 'Olivia Taylor', '01065362', 'Sistem Informasi', '2021', 'B0010', 'Marketing 5.0: Teknologi untuk Kemanusiaan');
 INSERT INTO public.peminjaman_buku(
 	no_peminjaman, status_peminjaman, tgl_peminjaman_buku, tgl_kembali_buku, nama_peminjam, nim, program_studi, angkatan, id_buku, judul_buku)
 	VALUES ('PB0096', 'Dipinjam', '2023-10-19', '2023-10-26', 'Alice Smith','097133', 'Sistem Informasi', '2020', 'B0033', 'Teknik Informasi dan Komunikasi seri Internet');
