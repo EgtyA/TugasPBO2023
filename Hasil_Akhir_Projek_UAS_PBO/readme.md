@@ -6,7 +6,7 @@ Pembuatan aplikasi penyimpanan buku dan skripsi yang bernama BoSi
 - Bahasa pemrograman java, 
 - Menggunakan database yaitu PostgreSQL 15
 
-# Gambaran untuk tampilan dari aplikasi BoSi
+# Desain untuk tampilan dari aplikasi BoSi
 
 # 1.	Desain untuk form log in pada aplikasi BoSi
 
